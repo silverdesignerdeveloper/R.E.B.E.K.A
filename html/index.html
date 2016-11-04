@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta name="author" content="silver designer&developer - Darkbit">
+		 <meta name="description" content="AI">
+		 <meta name="viewport" content="width=device-width,initial-scale=1">
+		 <title>REBEKA</title>
+		 <script src="../artyom.min.js">
+		 <script src="../artyom.js"></script>
+		 <script src="../artyomCommands.js"></script>
+		 <link rel="stylesheet" href="../css/style_index.css">
+	</head>
+
+	<body>
+
+		<div class="rebeka">
+		  <main>
+
+		  	<div id="rebeka_logo">
+		    	<h3><img src="../images/logo_rebeka.png" width="45" id="logo">R.E.B.E.K.A</h3>
+		  	</div>
+
+		  	<div id="chat">
+			  	<center id="center">
+
+			  	</center>
+		  	</div>
+
+			<img src="../images/Brain.gif" value="0"class="boolSAS" onclick="boolSAS()"/>
+			<span id="output" style="font-size:20px;color:red;"></span>
+		    <span id="time" style="font-size:35px;color:green;"></span>
+
+		  </main>
+
+		  <nav>
+		    <ul>
+		      <li class="active"><a href="#">REBEKA</a></li>
+		      <li><a href="#">Command</a></li>
+		      <li><a href="#">Mini-App</a></li>
+		      <li><a href="#">Setting</a></li>
+		      <li><a href="#">Info</a></li>
+		    </ul>
+		  </nav>
+
+		  <div class="burger">
+		    <span></span>
+		  </div>
+		</div>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="../js/index.js"></script>
+		<script type="text/javascript">
+
+			var boolSAS = function(){
+				if($('.boolSAS:eq(0)').val() == 0){
+					$('.boolSAS:eq(0)').val(1);
+					startArtyom()
+				}
+				else{
+					$('.boolSAS').val(0);
+					stopArtyom()
+				}
+
+			}
+
+      // Redirect the recognized text
+      artyom.redirectRecognizedTextOutput(function(text,isFinal){
+        var span = document.getElementById('output');
+        if(isFinal){
+          span.innerHTML = '';
+        }else {
+          span.innerHTML = text;
+		  provisoryStopArtyom();
+        }
+      });
+      function startArtyom(){
+        artyom.initialize({
+          lang:"it-IT",
+          continuous:true,
+          debug:true,
+          listen:true
+        });
+      }
+      function stopArtyom(){
+        artyom.fatality();
+      }
+      function provisoryStopArtyom(){
+	    $('.boolSAS').val(0);
+		stopArtyom()
+      }
+//       window.onload = function(){
+//           var tab = document.getElementById("commands-list");
+//           var commands =  artyom.getAvailableCommands();
+//           var html = '';
+//           for(var i = 0;i < commands.length;i++){
+//              var command = commands[i];
+//              html += command.description + " : <span style='color:blue;'>"+command.indexes.toString()+"</span><br>";
+//           }
+//          tab.innerHTML = html;
+//       };
+
+			// ----------- OTHER REBEKA INITIALIZE -------------- //
+
+
+// 			function startArtyom(){
+// 				artyom.initialize({
+// 					lang:"it-IT",
+// 					continuos:false,
+// 					debug:true,
+// 					listen:true
+// 				});
+// 			}
+//
+// 			function stopArtyom(){
+// 					artyom.fatality();
+// 				}
+//
+
+// 			function startContinuousArtyom(){
+// 				artyom.fatality();// use this to stop any of
+//
+//     setTimeout(function(){// if you use artyom.fatality , wait 250 ms to initialize again.
+//          artyom.initialize({
+//             lang:"it-IT",// A lot of languages are supported. Read the docs !
+//             continuous:true,// Artyom will listen forever
+//             listen:true, // Start recognizing
+//             debug:true, // Show everything in the console
+//             speed:1 // talk normally
+//         });
+//     },350);
+// }
+// startContinuousArtyom();
+
+
+
+// artyom.initialize({
+//     lang:"it-IT",
+//     debug:true, //Show what recognizes in the Console
+//     listen:true, //Start listening after this
+//     speed:0.5, // Talk a little bit slow
+// });
+//
+// /**
+//  * After of  seconds, stop artyom.
+//  */
+// setTimeout(function(){
+//     artyom.fatality();
+// }, 4000);
+		</script>
+	</body>
+</html>

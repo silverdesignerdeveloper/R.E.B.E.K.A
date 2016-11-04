@@ -1,0 +1,35 @@
+link(href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css')
+#laptop
+  #l-lid
+    #l-camera
+      #l-camera-lense
+      #l-camera-light
+    #l-lid-inner
+      #terminal(onclick="document.getElementById('term-command').focus()")
+        #term-inner
+          //- p
+          //-   | [
+          //-   span.term-font-blue Macbook
+          //-   | ] 
+          //-   span.term-font-blue | 
+          //-   | [
+          //-   span.term-font-green ~
+          //-   | ]
+          //- br
+          #term-user-bar
+            p
+              | [
+              span.term-font-green User
+              | ]$ 
+            input(type="text" id="term-command")
+  #l-bottom
+    #l-bottom-dent
+      #l-bottom-dent-inner
+    ul.l-grill#l-left
+      li 
+      li 
+      li 
+    ul.l-grill#l-right
+      li 
+      li 
+      li 

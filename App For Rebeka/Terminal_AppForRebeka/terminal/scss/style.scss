@@ -1,0 +1,166 @@
+@function grayscale($value) {
+  @return #{ "grayscale(" + $value + ")" };
+}
+
+
+$cover:#cacbcd;
+$bezel:#222;
+$terminal:#34352d;
+
+#laptop {
+  height:500px;
+  width:500px;
+  padding:20px;
+  margin:5px;
+  #l-lid {
+    height:50%;
+    width:80%;
+    background:$bezel;
+    padding:15px;
+    margin:0 auto;
+    border-radius:10px 10px 2px 2px;
+    position: relative;
+    border:2px solid $cover;
+    border-bottom:none;
+    #l-camera {
+      height: 20px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      #l-camera-light {
+        height: 3px;
+        width: 3px;
+        border-radius: 50%;
+        background: #e74c3c;
+        margin: 0 auto;
+        position: relative;
+        left: 9px;
+        top: -17px;
+      }
+      #l-camera-lense {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: lighten($bezel, 5%);
+        margin: 5px auto;
+        position: relative;
+        top:-2px;
+      }
+    }
+    #l-lid-inner {
+      height:100%;
+      width:100%;
+      background:$terminal;
+    }
+  } 
+
+  #l-bottom {
+    height:20px;
+    width:90%;
+    background:$cover;
+    margin:0 auto;
+    border-radius: 0 0 10px 10px;
+    padding: 3px 15px 0 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0px -5px 8px -2px rgba(0,0,0,0.75);
+    #l-bottom-dent {
+      position: absolute;
+      width:100%;
+      left:0;
+      top:-10px;
+      #l-bottom-dent-inner {
+        width:150px;
+        margin:0 auto;
+        padding:10px;
+        background:lighten($cover, 10%);
+        border-radius: 10px;
+      }
+    }
+    .l-grill {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      li {
+        margin: 0;
+        float: left;
+        height: 10px;
+        width:3px;
+        margin: 1px;
+        background:darken($cover, 15%);
+      }
+      &#l-left {
+        left:15px;
+      }
+      &#l-right {
+        right:15px;
+      }
+    }
+  }
+}
+
+#terminal {
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  font-size:15px;
+  #term-inner {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+    p,span,input {
+      font-family: 'Ubuntu Mono';
+      font-size:15px;
+    }
+    p {
+      color:white;
+      padding: 0;
+      margin: 0;
+      float: left;
+      span.term-font-blue {color:#7a80d3}
+      span.term-font-green {color:#79d17d}
+    }
+    p#term-output {
+      width:100%;
+      float:left;
+    }
+    #term-user-bar {
+      position: relative;
+      width:100%;
+      float:left;
+      p {
+        position: absolute;
+        top:0;
+        left:0;
+
+      }
+      input {
+        background: none;
+        border:none;
+        margin: 0;
+        padding: 0;
+        display: block;
+        padding-left:10px;
+        color:white;
+        padding-left:55px;
+        width:100%;
+        &:focus {
+          border:none!important;
+          outline: 0;
+        }
+
+      }
+    }
+    .term-left {
+      float:left;
+    }
+    #cursor {
+      content:"|";
+      display:block;
+    }
+  }
+}
