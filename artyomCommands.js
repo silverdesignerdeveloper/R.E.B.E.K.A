@@ -15,11 +15,13 @@
     /*
   		  R.E.B.E.K.A Commands
      */
+
     var artyomCommandCiaoResponse = 'Ciao, io sono Rebeka.';
+    console.log(artyomCommandCiaoResponse);
     var artyomCommandsCiao = [
         //ciao
         {
-            indexes: ['ciao'],
+            indexes: ['ciao', 'rebi', 'rebeka', 'tu', 'c****'],
             action : function(i){
                 artyom.say(artyomCommandCiaoResponse,{
                     onStart: function(){
@@ -38,14 +40,21 @@
                       ioAvatar.setAttribute('width', '33');
                       ioAvatar.setAttribute('style', 'float:left;position:relative;right:23%;bottom:11px;border-radius:25px;');
 
+
 	                    //Io MessageBox
                       $(messagebox).append(ioAvatar);
 	                    $(messagebox).append(span);
-	                    $(messagebox).append("<br/>" + artyomCommandsCiao[0].indexes);
+	                    $(messagebox).append("<br/>" + artyomCommandsCiao[0].indexes[i]);
 	                    $('#center').append(messagebox);
 
-                      console.log("Speaking");
+                      //auto-scrolling bottom
+                      $(function () {
+                                $("#chat, #center ").animate({
+                                    scrollTop: $('#chat, #center').get(0).scrollHeight
+                                }, 2000);
+                      });
 
+                      console.log("Speaking");
 					},
                     onEnd: function(){
 
