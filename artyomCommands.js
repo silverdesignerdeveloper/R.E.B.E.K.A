@@ -40,7 +40,6 @@
                       ioAvatar.setAttribute('width', '33');
                       ioAvatar.setAttribute('style', 'float:left;position:relative;right:23%;bottom:11px;border-radius:25px;');
 
-
 	                    //Io MessageBox
                       $(messagebox).append(ioAvatar);
 	                    $(messagebox).append(span);
