@@ -13,13 +13,12 @@
     'use strict';
 
     /*
-  		  R.E.B.E.K.A Commands
-     */
+  		  R.E.B.E.K.A COMMANDS
+    */
 
+    //ciao
     var artyomCommandCiaoResponse = 'Ciao, io sono Rebeka.';
-    console.log(artyomCommandCiaoResponse);
     var artyomCommandsCiao = [
-        //ciao
         {
             indexes: ['ciao', 'rebi', 'rebeka', 'tu', 'c****'],
             action : function(i){
@@ -92,11 +91,10 @@
                 artyom.say(wildcard);
             }
         }
-        // continue adding commands
     ];
 
+    //BuonaSera
     var artyomCommandsBuonaSera = [
-       	//BuonaSera
         {
             indexes: ['buonasera'],
             action : function(i){
@@ -119,12 +117,10 @@
                 artyom.say(wildcard);
             }
         }
-        // continue adding commands
     ];
 
-
+    //Hei
     var artyomCommandsHei = [ {
-        //Hei
             indexes: ['ehi', 'hey', 'ei', 'oi', 'eilà', 'eila', 'rebi'],
             action : function(i){
                 artyom.say("Mi ha chiamato signore?",{
@@ -148,8 +144,8 @@
         }
         ];
 
+       //Complimento1
        var artyomCommandsComplimento1 = [ {
-        //Complimento1
             indexes: ['Sei bellissima'],
             action : function(i){
                 artyom.say("Grazie, signore. E' molto gentile da parte sua.",{
@@ -173,8 +169,8 @@
         }
         ];
 
-        var artyomCommandsColori = [ {
         //colori
+        var artyomCommandsColori = [ {
             indexes: ['rebeka dimmi un colore', 'un colore a caso'],
             action : function(i){
                 artyom.sayRandom([
@@ -192,8 +188,8 @@
         }
         ];
 
+        //pompo nelle casse
          var artyomCommandsPompoNelleCasse = [ {
-        //colori
             indexes: ['Pompo nelle casse'],
             action : function(i){
                 artyom.say('Pompo anche io');
@@ -210,10 +206,8 @@
         }
         ];
 
-
-
+         //Colore Preferito
          var artyomCommandsColorePreferito = [ {
-        //Colore Preferito
             indexes: ['Rebeka, dimmi il tuo colore preferito', 'il tuo colore preferito?', 'colore preferito?'],
             action : function(i){
                 artyom.say("Il mio colore preferito è il Blu",{
@@ -237,9 +231,8 @@
         }
         ];
 
-
+    //Salve
     var artyomCommandsSalve = [
-        //Salve
         {
             indexes: ['salve'],
             action : function(i){
@@ -262,11 +255,10 @@
                 artyom.say(wildcard);
             }
         }
-       // continue adding commands
     ];
 
+  //Buon pomeriggio
 	var artyomCommandsBuonPomeriggio = [
-        //Buon pomeriggio
         {
             indexes: ['buon pomeriggio'],
             action : function(i){
@@ -292,7 +284,6 @@
         ];
 
        var artyomCommandsInfoRebeka = [
-        //Salve
         {
             indexes: ['chi sei?', 'chi ti ha creato', 'come ti chiami'],
             action : function(i){
@@ -315,72 +306,45 @@
                 artyom.say(wildcard);
             }
         }
-          ];
+        ];
 
            //Go To Url
+
+           //Open Google
            var artyomCommandsOpenGoogle = {
               indexes: ['Apri * Google', 'cerca su google * '],
               smart:true,
               action : function(i, wildcard, sentence){
-                       console.log(wildcard);
-                     switch(i) {
+                     console.log(wildcard);
 
+                     switch(i) {
                        case 0:
                        window.open('https://www.google.it');
                        break;
-
                        case 1:
                        window.open('https://www.google.it/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=' + wildcard);
-
                        break;
-
                      }
 
-                   }
+              }
           };
 
+          //Open Facebook
           var artyomCommandsOpenFacebook = {
               indexes: ['Apri * Facebook', 'vai su * Facebook', 'facebook', 'faccialibro'],
               smart:true,
               action : function(i, wildcard, sentence){
 
                      switch(i) {
-
                        case 0:
                        window.open('https://www.facebook.com');
                        break;
-
-
                      }
-
-                   }
+              }
           };
+          //End Go To Url
 
-//           {
-//           description:"Say what time is it",
-//           indexes:['what time is it'],
-//           action:function(){
-//            var currentdate = new Date();
-//            var datetime = "About the date : " + currentdate.getDate() + "/"
-//                 + (currentdate.getMonth()+1)  + "/"
-//                 + currentdate.getFullYear() + " @ "
-//                 + currentdate.getHours() + ":"
-//                 + currentdate.getMinutes() + ":"
-//                 + currentdate.getSeconds();
-//             document.getElementById('time').innerHTML = datetime;
-//           }
-//         },
-//         {
-//           description: "Smart command, say how much x in what we say",
-//           indexes:["what's the number of *"],
-//           smart:true,
-//           action:function(i,wildcard){
-//             document.getElementById('time').innerHTML = "The number of " + wildcard + ' is '+ Math.floor(Math.random() * 4000) + 1;
-//           }
-//         }
-//       ]);
-
-
+    //invocated command
     artyom.addCommands(artyomCommandsCiao);
     artyom.addCommands(artyomCommandsSalve);
     artyom.addCommands(artyomCommandsInfoRebeka);
@@ -390,21 +354,59 @@
     artyom.addCommands(artyomCommandsColorePreferito);
     artyom.addCommands(artyomCommandsColori);
     artyom.addCommands(artyomCommandsBuonaSera);
-	artyom.addCommands(artyomCommandsHei);
-	artyom.addCommands(artyomCommandsComplimento1);
-	artyom.addCommands(artyomCommandsPompoNelleCasse);
+	  artyom.addCommands(artyomCommandsHei);
+	  artyom.addCommands(artyomCommandsComplimento1);
+	  artyom.addCommands(artyomCommandsPompoNelleCasse);
+    //end invocated command
 
-    /**
-     * Or use the shorter and cleaner method :
-     */
-//
-//     artyom.on(['Buon Giorno']).then(function(i){
-//         alert("Buon Giorno ! Chi sei?");
-//     });
-//
-//     artyom.on(['Repeat after me *'] , true).then(function(i, wildcard){
-//         alert("You've said " + wildcard);
-//     });
+    /*
+       R.E.B.E.K.A COMMAND GROUP
+    */
+
+    //Persone
+    var myGroupPersone = [
+    {
+        description:"Se il mio databasePersone contiene il nome di una persona dire qualcosa",
+        smart:true, // un comando intelligente consente di utilizzare wildcard per recuperare le parole che l'utente dovrebbe dire
+         // Modi per attivare il comando con la voce
+        indexes:["sai chi è *","io non so chi è *","è * una brava persona"],
+        // Fare qualcosa quando il comando viene attivato
+        action:function(i,wildcard){
+            var databasePersone = ["Carlos","Bruce","David","Joseph","Kenny"];
+
+            // Se il comando "è xxx una brava persona" viene attivato fare, altrimenti
+            if(i == 2){
+                if(database.indexOf(wildcard.trim())){
+                    artyom.say("Sono una macchina, non so che cosa è un sentimento");
+                }else{
+                    artyom.say("Io non so chi è " + wildcard + " e non posso dire se è una brava persona");
+                }
+            }else{
+                if(database.indexOf(wildcard.trim())){
+                    artyom.say("Certo che lo so chi è "+ wildcard + ". Una persona veramente buona");
+                }else{
+                    artyom.say("Il mio database non è abbastanza grande, non so chi è " + wildcard);
+                }
+            }
+        }
+    },
+    {
+        indexes:["che ore sono","È troppo tardi"],
+        action:function(i){ // var i restituisce l'indice del comando riconosciuto nella matrice precedente
+            if(i == 0){
+                aFunctionThatSaysTheTime(new Date());
+            }else if(i == 1){
+                artyom.say("Non è troppo tardi per fare qualcosa, signore");
+            }
+        }
+    }
+];
+
+//invocated command group
+artyom.addCommands(myGroupPersone);
+//end invocated command group
+
+//End Command Group
 
     console.log(artyom.getAvailableCommands());
 })(window);
