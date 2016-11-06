@@ -284,12 +284,12 @@
         ];
 
         //Parolacce
-        var artyomCommandsParolacceResponse = 'Specchio Riflesso';
+        var artyomCommandsParolacceResponse = ['Specchio Riflesso', 'Non è gentile da parte sua', 'Pensa per te', 'Chi lo dice per primo lo è'];
         var artyomCommandsParolacce = [
             {
-                indexes: ['puppamelo', 's*********', 'v*********', 'sei una t****', 'fottiti', 'fai schifo'],
+                indexes: ['puppamelo', 'stronza', 'puttana', 'sei una puttana', 'troia', 'cogliona', 'pezza di merda', 'sei una merda' , 'ti sborro','s*********', 'v*********', 'sei una t****', 'fottiti', 'fai schifo'],
                 action : function(i){
-                    artyom.say(artyomCommandsParolacceResponse,{
+                    artyom.sayRandom(artyomCommandsParolacceResponse,{
                         onStart: function(){
 
     	                    //io span
