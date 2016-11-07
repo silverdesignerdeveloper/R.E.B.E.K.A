@@ -287,7 +287,7 @@
         var artyomCommandsParolacceResponse = ['Specchio Riflesso', 'Non è gentile da parte sua', 'Pensa per te', 'Chi lo dice per primo lo è'];
         var artyomCommandsParolacce = [
             {
-                indexes: ['puppamelo', 'stronza', 'puttana', 'sei una puttana', 'troia', 'cogliona', 'pezza di merda', 'sei una merda' , 'ti sborro','s*********', 'v*********', 'sei una t****', 'fottiti', 'fai schifo'],
+                indexes: ['puppamelo', 's******', 'p*****', 'sei una p******', 't****', 'c*******', 'pezza di merda', 'sei una merda' , 'ti sborro','s*********', 'v*********', 'sei una t****', 'fottiti', 'fai schifo'],
                 action : function(i){
                     artyom.sayRandom(artyomCommandsParolacceResponse,{
                         onStart: function(){
